@@ -10,7 +10,7 @@ import SwiftUI
 struct InsuranceApplicationClaimView: View {
     
     @State private var insuranceApplication = InsuranceApplication()
-    @State private var currentStep: ApplicationSteps = .personal
+    @State private var currentStep: ApplicationStep = .personal
     
     
     var body: some View {
@@ -19,7 +19,7 @@ struct InsuranceApplicationClaimView: View {
                 
                 switch currentStep {
                     case .personal:
-                        PersonalInformationView()
+                    PersonalInformationView(personal: $insuranceApplication.personal)
                     case .damage:
                         DamageDetailsView()
                     case .address:
@@ -28,7 +28,7 @@ struct InsuranceApplicationClaimView: View {
                         ReviewView()
                 }
             }
-            .navigationTitle("Personal Information")
+            .navigationTitle(currentStep.title)
             .padding()
         }
        
