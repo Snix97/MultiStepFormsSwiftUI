@@ -11,22 +11,35 @@ struct Address {
     var street = ""
 }
 
-//Define application steps - diff views for each section
-enum ApplicationSteps {
-    case personal
-    case damage
-    case address
-    case review
-}
-
-struct InsuranceApplication {
-    
+struct Personal {
     var firstName: String = ""
     var lastName: String = ""
     var email: String = ""
     var password: String = ""
     var confirmPassword: String = ""
+}
+
+//Define application steps - diff views for each section
+enum ApplicationStep {
+    case personal
+    case damage
+    case address
+    case review
     
+    //Get the Screen title for each application step
+    var title: String {
+        switch self {
+            case .personal: return "Personal Information"
+            case .damage: return "Damage Information"
+            case .address: return "Address Information"
+            case .review: return "Review Application"
+        }
+    }
+}
+
+struct InsuranceApplication {
+    
+    var personal: Personal = Personal()
     var damage: String = ""
     var address: Address = Address()
 }
