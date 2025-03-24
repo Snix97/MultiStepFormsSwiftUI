@@ -15,7 +15,7 @@ struct DamageDetailsView: View {
         Form {
             TextField("Damage description", text: $damage.textDescription)
             TextField("Position", text: $damage.position)
-            TextField("Estimated cost", text:$damage.cost)
+            TextField("Estimated cost", text: $damage.cost)
            
         }
 
@@ -23,5 +23,7 @@ struct DamageDetailsView: View {
 }
 
 #Preview {
-    DamageDetailsView(damage:.constant(Damage(textDescription: "missing roof tiles", position: "External damage", cost: "£600.00")))
+  /*  DamageDetailsView(damage:.constant(Damage(textDescription: "missing roof tiles", position: "External damage", cost: "£600.00"))) */
+    
+    DamageDetailsView(damage:.constant(Damage()))
 }

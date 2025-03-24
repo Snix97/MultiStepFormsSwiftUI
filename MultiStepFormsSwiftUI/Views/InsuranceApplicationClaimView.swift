@@ -23,9 +23,9 @@ struct InsuranceApplicationClaimView: View {
                     case .damage:
                     DamageDetailsView(damage: $insuranceApplication.damage)
                     case .address:
-                        AddressInformationView()
+                    AddressInformationView(address: $insuranceApplication.address)
                     case .review:
-                        ReviewView()
+                    ReviewView(insuranceApplication: insuranceApplication)
                 }
                     
                 HStack {

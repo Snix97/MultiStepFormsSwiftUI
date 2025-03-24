@@ -7,10 +7,6 @@
 
 import SwiftUI
 
-struct Address {
-    var street = ""
-}
-
 struct Personal {
     var firstName: String = ""
     var lastName: String = ""
@@ -22,8 +18,12 @@ struct Personal {
 struct Damage {
     var textDescription: String = ""
     var position: String = ""
-    var cost: String = "0.00"
+    var cost: String = ""
   
+}
+
+struct Address {
+    var street = ""
 }
 
 
