@@ -27,9 +27,28 @@ struct InsuranceApplicationClaimView: View {
                     case .review:
                         ReviewView()
                 }
-            }
-            .navigationTitle(currentStep.title)
-            .padding()
+                    
+                HStack {
+                    //Only show previous button if the current step actually has a previous one
+                    if let previousStep = currentStep.previous {
+                        Button("Previous") {
+                            currentStep = previousStep
+                        }
+                    }
+                    
+                    //Only show Nexts button if the current step actually has a next one
+                    if let nextStep = currentStep.next {
+                        Button("Next") {
+                            currentStep = nextStep
+                        }
+                    }
+                    
+                }
+               
+                
+            }.navigationTitle(currentStep.title)
+            
+           
         }
        
     }

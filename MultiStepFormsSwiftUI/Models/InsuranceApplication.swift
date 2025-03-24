@@ -35,6 +35,25 @@ enum ApplicationStep {
             case .review: return "Review Application"
         }
     }
+    
+    //Logic to control buttons that user uses to move through the form
+    var previous: ApplicationStep? {
+        switch self {
+            case .personal: return nil
+            case .damage: return .personal
+            case .address: return .damage
+            case .review: return .address
+        }
+    }
+    
+    var next: ApplicationStep? {
+        switch self {
+            case .personal: return .damage
+            case .damage: return .address
+            case .address: return .review
+            case .review: return nil
+        }
+    }
 }
 
 struct InsuranceApplication {
