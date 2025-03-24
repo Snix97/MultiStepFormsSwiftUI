@@ -19,6 +19,15 @@ struct Personal {
     var confirmPassword: String = ""
 }
 
+struct Damage {
+    var textDescription: String = ""
+    var position: String = ""
+    var cost: String = "0.00"
+  
+}
+
+
+
 //Define application steps - diff views for each section
 enum ApplicationStep {
     case personal
@@ -59,6 +68,6 @@ enum ApplicationStep {
 struct InsuranceApplication {
     
     var personal: Personal = Personal()
-    var damage: String = ""
+    var damage: Damage = Damage()
     var address: Address = Address()
 }

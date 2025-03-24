@@ -21,7 +21,7 @@ struct InsuranceApplicationClaimView: View {
                     case .personal:
                     PersonalInformationView(personal: $insuranceApplication.personal)
                     case .damage:
-                        DamageDetailsView()
+                    DamageDetailsView(damage: $insuranceApplication.damage)
                     case .address:
                         AddressInformationView()
                     case .review:
