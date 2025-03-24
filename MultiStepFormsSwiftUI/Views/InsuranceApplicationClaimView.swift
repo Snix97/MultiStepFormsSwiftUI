@@ -36,13 +36,16 @@ struct InsuranceApplicationClaimView: View {
                         }
                     }
                     
-                    //Only show Nexts button if the current step actually has a next one
-                    if let nextStep = currentStep.next {
-                        Button("Next") {
-                            currentStep = nextStep
+                    //Logic to show Next or submit. After Review we need to submit
+                    Button(currentStep == .review ? "Submit" : "Next") {
+                        if currentStep == .review {
+                            print("Submit Insurance claim")
+                        }
+                        //Only show Nexts button if the current step actually has a next one
+                        else if let nextStep = currentStep.next {
+                           currentStep = nextStep
                         }
                     }
-                    
                 }
                
                 
