@@ -29,9 +29,36 @@
 		52C382562D91A9DD0001747A /* MultiStepFormsSwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultiStepFormsSwiftUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		52C382802D91B23A0001747A /* Exceptions for "MultiStepFormsSwiftUI" folder in "MultiStepFormsSwiftUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Views/AddressInformationView.swift,
+				Views/DamageDetailsView.swift,
+				Views/PersonalInformationView.swift,
+				Views/ReviewView.swift,
+			);
+			target = 52C3824B2D91A9DD0001747A /* MultiStepFormsSwiftUITests */;
+		};
+		52C382812D91B23A0001747A /* Exceptions for "MultiStepFormsSwiftUI" folder in "MultiStepFormsSwiftUIUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Views/AddressInformationView.swift,
+				Views/DamageDetailsView.swift,
+				Views/PersonalInformationView.swift,
+				Views/ReviewView.swift,
+			);
+			target = 52C382552D91A9DD0001747A /* MultiStepFormsSwiftUIUITests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		52C3823E2D91A9D80001747A /* MultiStepFormsSwiftUI */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				52C382802D91B23A0001747A /* Exceptions for "MultiStepFormsSwiftUI" folder in "MultiStepFormsSwiftUITests" target */,
+				52C382812D91B23A0001747A /* Exceptions for "MultiStepFormsSwiftUI" folder in "MultiStepFormsSwiftUIUITests" target */,
+			);
 			path = MultiStepFormsSwiftUI;
 			sourceTree = "<group>";
 		};

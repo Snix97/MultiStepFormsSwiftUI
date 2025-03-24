@@ -14,7 +14,7 @@ struct Address {
 //Define application steps - diff views for each section
 enum ApplicationSteps {
     case personal
-    case damagew
+    case damage
     case address
     case review
 }

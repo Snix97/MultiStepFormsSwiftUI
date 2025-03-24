@@ -8,13 +8,25 @@
 import SwiftUI
 
 struct InsuranceApplicationClaimView: View {
+    
+    @State private var insuranceApplication = InsuranceApplication()
+    @State private var currentStep: ApplicationSteps = .personal
+    
+    
     var body: some View {
         NavigationStack {
             VStack {
-                Image(systemName: "globe")
-                    .imageScale(.large)
-                    .foregroundStyle(.tint)
-                Text("Hello, world!")
+                
+                switch currentStep {
+                    case .personal:
+                        PersonalInformationView()
+                    case .damage:
+                        DamageDetailsView()
+                    case .address:
+                        AddressInformationView()
+                    case .review:
+                        ReviewView()
+                }
             }
             .navigationTitle("Personal Information")
             .padding()
