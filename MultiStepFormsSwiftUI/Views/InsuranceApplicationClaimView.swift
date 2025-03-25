@@ -11,8 +11,7 @@ struct InsuranceApplicationClaimView: View {
     
     @State private var insuranceApplication = InsuranceApplication()
     @State private var currentStep: ApplicationStep = .personal
-    
-    
+   
     var body: some View {
         NavigationStack {
             VStack {
@@ -27,7 +26,7 @@ struct InsuranceApplicationClaimView: View {
                     case .review:
                     ReviewView(insuranceApplication: insuranceApplication)
                 }
-                    
+                
                 HStack {
                     //Only show previous button if the current step actually has a previous one
                     if let previousStep = currentStep.previous {
@@ -35,26 +34,23 @@ struct InsuranceApplicationClaimView: View {
                             currentStep = previousStep
                         }
                     }
-                    
+
                     //Logic to show Next or submit. After Review we need to submit
                     Button(currentStep == .review ? "Submit" : "Next") {
                         if currentStep == .review {
                             print("Submit Insurance claim")
                         }
+                        
                         //Only show Nexts button if the current step actually has a next one
                         else if let nextStep = currentStep.next {
                            currentStep = nextStep
                         }
                     }
                 }
-               
-                
             }.navigationTitle(currentStep.title)
-            
-           
         }
-       
     }
+   
 }
 
 #Preview {

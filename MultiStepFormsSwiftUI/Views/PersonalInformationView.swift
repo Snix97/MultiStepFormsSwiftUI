@@ -17,19 +17,29 @@ struct PersonalInformationView: View {
     @Binding var personal: Personal
     
     var body: some View {
-        Form {
-            TextField("First name", text: $personal.firstName)
-            TextField("Last name", text: $personal.lastName)
-            TextField("Email", text: $personal.email)
-            TextField("Password", text: $personal.password)
-            TextField("Confirm Password", text: $personal.confirmPassword)
-        }
         
+        Form {
+            Section ("Contact Details") {
+                TextField("First name", text: $personal.firstName)
+                TextField("Last name", text: $personal.lastName)
+                TextField("Email", text: $personal.email).autocapitalization(.none)
+                TextField("Phone", text: $personal.phone)
+            }
+            .disableAutocorrection(true)
+            
+            Section("Create Login") {
+                TextField("Username", text: $personal.userName).autocapitalization(.none)
+                SecureTextField(text: $personal.password, secureTitle: "Password")
+                SecureTextField(text: $personal.confirmPassword, secureTitle: "Confirm Password")
+            }
+        }
+
     }
 }
 
 #Preview {
-    var personal = Personal(firstName: "Ted", lastName: "Smith", email: "smithy@gmail.com", password: "Pa55w0rd", confirmPassword: "Pa55w0rd")
+    let personal = Personal(firstName: "Ted", lastName: "Smith", email: "smithy@gmail.com", password: "Pa55w0rd", confirmPassword: "Pa55w0rd")
     
     PersonalInformationView(personal: .constant(personal))
 }
+

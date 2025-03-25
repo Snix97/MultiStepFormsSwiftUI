@@ -37,6 +37,7 @@
 				Views/DamageDetailsView.swift,
 				Views/PersonalInformationView.swift,
 				Views/ReviewView.swift,
+				Views/SecureTextField.swift,
 			);
 			target = 52C3824B2D91A9DD0001747A /* MultiStepFormsSwiftUITests */;
 		};
@@ -47,6 +48,7 @@
 				Views/DamageDetailsView.swift,
 				Views/PersonalInformationView.swift,
 				Views/ReviewView.swift,
+				Views/SecureTextField.swift,
 			);
 			target = 52C382552D91A9DD0001747A /* MultiStepFormsSwiftUIUITests */;
 		};

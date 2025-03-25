@@ -11,6 +11,8 @@ struct Personal {
     var firstName: String = ""
     var lastName: String = ""
     var email: String = ""
+    var phone: String = ""
+    var userName: String = ""
     var password: String = ""
     var confirmPassword: String = ""
 }
@@ -66,7 +68,6 @@ enum ApplicationStep {
 }
 
 struct InsuranceApplication {
-    
     var personal: Personal = Personal()
     var damage: Damage = Damage()
     var address: Address = Address()
