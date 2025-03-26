@@ -17,18 +17,41 @@ struct PersonalInformationView: View {
     @Binding var personal: Personal
     
     var body: some View {
-        
+       
         Form {
             Section ("Contact Details") {
                 TextField("First name", text: $personal.firstName)
+                .safeAreaInset(edge: .leading) {
+                    Image(systemName: "pencil.line")
+                    .foregroundColor(.secondary)
+                }
+                
                 TextField("Last name", text: $personal.lastName)
+                .safeAreaInset(edge: .leading) {
+                    Image(systemName: "pencil.line")
+                        .foregroundColor(.secondary)
+                }
+                
                 TextField("Email", text: $personal.email).autocapitalization(.none)
+                .safeAreaInset(edge: .leading) {
+                    Image(systemName: "envelope")
+                        .foregroundColor(.secondary)
+                }
+                
                 TextField("Phone", text: $personal.phone)
+                .safeAreaInset(edge: .leading) {
+                    Image(systemName: "phone")
+                        .foregroundColor(.secondary)
+                }
             }
             .disableAutocorrection(true)
             
             Section("Create Login") {
                 TextField("Username", text: $personal.userName).autocapitalization(.none)
+                    .safeAreaInset(edge: .leading) {
+                        Image(systemName: "person")
+                            .foregroundColor(.secondary)
+                    }
                 SecureTextField(text: $personal.password, secureTitle: "Password")
                 SecureTextField(text: $personal.confirmPassword, secureTitle: "Confirm Password")
             }

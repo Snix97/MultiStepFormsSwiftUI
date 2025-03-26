@@ -23,6 +23,10 @@ struct SecureTextField: View {
                 TextField(text, text: $text)
             }
         }
+        .safeAreaInset(edge: .leading) {
+            Image(systemName: "lock")
+                .foregroundColor(.secondary)
+        }
         .autocapitalization(.none)
         .overlay(alignment: .trailing) {
             Image(systemName: isSecureField ?  "eye.slash" : "eye")
