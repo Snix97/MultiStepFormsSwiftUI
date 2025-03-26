@@ -25,7 +25,7 @@ struct Damage {
 }
 
 struct Address {
-    var street = ""
+    var addressDetails = ""
 }
 
 

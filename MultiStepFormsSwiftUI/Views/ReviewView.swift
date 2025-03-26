@@ -28,7 +28,7 @@ struct ReviewView: View {
             }
             
             Section("Address") {
-                Text(insuranceApplication.address.street)
+                Text(insuranceApplication.address.addressDetails)
             }
         }
         
