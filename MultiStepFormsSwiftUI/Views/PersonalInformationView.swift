@@ -33,12 +33,14 @@ struct PersonalInformationView: View {
                 }
                 
                 TextField("Email", text: $personal.email).autocapitalization(.none)
+                    .keyboardType(.emailAddress)
                 .safeAreaInset(edge: .leading) {
                     Image(systemName: "envelope")
                         .foregroundColor(.secondary)
                 }
                 
                 TextField("Phone", text: $personal.phone)
+                    .keyboardType(.phonePad)
                 .safeAreaInset(edge: .leading) {
                     Image(systemName: "phone")
                         .foregroundColor(.secondary)
