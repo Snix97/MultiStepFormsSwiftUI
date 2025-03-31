@@ -67,11 +67,39 @@ struct PersonalInformationView: View {
                             .foregroundColor(.secondary)
                     }
                 SecureTextField(text: $personal.password, secureTitle: "Password")
+                //Show results of Password validation failure
+                if personal.$password != nil {
+                    Text(personal.$password ?? "")
+                     .font(.caption)
+                     .foregroundColor(.red)
+                     //Hide when no error
+                     .frame(height: personal.$password == nil ? 0 : 60)
+                     .animation(.easeInOut(duration: 0.6), value: personal.$password)
+                }
+                
                 SecureTextField(text: $personal.confirmPassword, secureTitle: "Confirm Password")
+                if personal.$confirmPassword != nil {
+                    Text(personal.$confirmPassword ?? "")
+                     .font(.caption)
+                     .foregroundColor(.red)
+                     //Hide when no error
+                     .frame(height: personal.$confirmPassword == nil ? 0 : 60)
+                     .animation(.easeInOut(duration: 0.6), value: personal.$confirmPassword)
+                }
+                
+                //Check passwords match
+                let pw = personal.getPassword()
+                let cpw = personal.getConfirmPassword()
+                if (pw.count > 7 && cpw.count > 7) {
+                    Text(pw == cpw ? "✅ Passwords match" : "❌ Passwords do not match")
+                        .font(.caption)
+                        .foregroundColor(pw == cpw ? .green : .red)
+                }
             }
         }
 
     }
+   
 }
 
 #Preview { 

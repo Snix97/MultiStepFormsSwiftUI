@@ -15,8 +15,18 @@ struct Personal {
     @Email(errorMessage: "Email is not in valid format") var email: String = ""
     var phone: String = ""
     var userName: String = ""
-    var password: String = ""
-    var confirmPassword: String = ""
+    
+    @Password(errorMessage: "Password must be a minimum of 8 characters and contain at least 1 lowercase, 1 uppercase  1 digit and 1 special character.") var password: String = ""
+    
+    @Password(errorMessage: "Password must be at least 8 characters and contain at least 1 lowercase, 1 uppercase  1 digit and 1 special character.") var confirmPassword: String = ""
+    
+    func getPassword() -> String {
+        return password
+    }
+    
+    func getConfirmPassword() -> String {
+        return confirmPassword
+    }
 }
 
 struct Damage {
