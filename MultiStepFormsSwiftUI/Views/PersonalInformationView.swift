@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct PersonalInformationView: View {
     /*
      @Binding = I don’t own this piece of data, I (essentially) own a
@@ -38,6 +39,17 @@ struct PersonalInformationView: View {
                     Image(systemName: "envelope")
                         .foregroundColor(.secondary)
                 }
+                   
+                //Show results of email validation failure
+                if personal.$email != nil {
+                    Text(personal.$email ?? "")
+                     .font(.caption)
+                     .foregroundColor(.red)
+                     //Hide when no error
+                     .frame(height: personal.$email == nil ? 0 : 20)
+                     .animation(.easeInOut(duration: 0.6), value: personal.$email)
+                }
+               
                 
                 TextField("Phone", text: $personal.phone)
                     .keyboardType(.phonePad)
@@ -62,7 +74,7 @@ struct PersonalInformationView: View {
     }
 }
 
-#Preview {
+#Preview { 
     let personal = Personal(firstName: "Ted", lastName: "Smith", email: "smithy@gmail.com", password: "Pa55w0rd", confirmPassword: "Pa55w0rd")
     
     PersonalInformationView(personal: .constant(personal))

@@ -33,6 +33,8 @@
 		52C382802D91B23A0001747A /* Exceptions for "MultiStepFormsSwiftUI" folder in "MultiStepFormsSwiftUITests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				Helpers/Constants.swift,
+				Helpers/FormValidationPropertyWrapppers.swift,
 				Views/AddressInformationView.swift,
 				Views/DamageDetailsView.swift,
 				Views/PersonalInformationView.swift,
@@ -44,6 +46,8 @@
 		52C382812D91B23A0001747A /* Exceptions for "MultiStepFormsSwiftUI" folder in "MultiStepFormsSwiftUIUITests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				Helpers/Constants.swift,
+				Helpers/FormValidationPropertyWrapppers.swift,
 				Views/AddressInformationView.swift,
 				Views/DamageDetailsView.swift,
 				Views/PersonalInformationView.swift,

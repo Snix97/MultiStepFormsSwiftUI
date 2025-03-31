@@ -10,7 +10,9 @@ import SwiftUI
 struct Personal {
     var firstName: String = ""
     var lastName: String = ""
-    var email: String = ""
+    
+   //Pass in custom error msg to @Email PropertyWrapper
+    @Email(errorMessage: "Email is not in valid format") var email: String = ""
     var phone: String = ""
     var userName: String = ""
     var password: String = ""
