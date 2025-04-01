@@ -1,5 +1,5 @@
 # MultiStepFormsSwiftUI
-Using SwiftUI to create a multi-step form to log damages e.g. for insurance claims.  Also includes validation on the Email field using custom property wrappers and show/hiding password entry with normal and secure TextFields.
+Using SwiftUI to create a multi-step form to log damages e.g. for insurance claims.  Also includes validations on fields such as Email and Password using custom property wrappers and show/hiding password entry with normal and secure TextFields.
 
 Taken from azamsharp YouTube channel  
 
